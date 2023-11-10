@@ -1,15 +1,7 @@
 # SpaceR
 Spatial Cell Resampling for quantitative analysis of cytometry data
 
-<style type="text/css">
-.main-container {
-  max-width: 1800px !important;
-  margin-left: auto;
-  margin-right: auto;
-}
-</style>
-
-![](README_files/figure-markdown_github/Cellula_spaziale.png)
+<img src="figure-markdown_github/Cellula_spaziale.png" alt="image" width="300" height="auto">
 
 # Overview
 
@@ -169,7 +161,7 @@ res = spatial_randomness_test(data=Data,
     ## alternative hypothesis: spatial clustering
     ## Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-![](README_files/figure-markdown_github/SpatialRandomness-1.png)
+![](figure-markdown_github/SpatialRandomness-1.png)
 
 Following are the function arguments:
 
@@ -254,7 +246,7 @@ res =  spatial_dependence_test(data=Data,
     ## alternative hypothesis: segregation 
     ## Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-![](README_files/figure-markdown_github/segregation-1.png)
+![](figure-markdown_github/segregation-1.png)
 
 In the *marker* vector given as fuction input, AID is the baseline
 population from which the nearest neighbor distances are calculated. In
@@ -327,7 +319,7 @@ res =  spatial_dependence_test( data= Data,
     ## alternative hypothesis: aggregation 
     ## Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-![](README_files/figure-markdown_github/aggregation-1.png)
+![](figure-markdown_github/aggregation-1.png)
 
 ``` r
 res
@@ -378,7 +370,7 @@ res = distribution_equality_test(data=Data,
     ## 100%  Done  
     ## 
 
-![](README_files/figure-markdown_github/equality-1.png)
+![](figure-markdown_github/equality-1.png)
 
     ## test.statistic =  1679.62 , p-value  < 2e-04  
     ## alternative hypothesis:  CD3  and  AID cells have different spatial distributions 
