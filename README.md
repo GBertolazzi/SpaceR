@@ -5,7 +5,7 @@ Spatial Cell Resampling for quantitative analysis of cytometry data
 
 # Overview
 
-The **SpaceR** package implement point pattern spatial analysis for
+The **SpaceR** package implements point pattern spatial analysis for
 spatial cytometry data.
 
 The SpaceR functions allow running novel resampling methods for testing
@@ -15,7 +15,7 @@ provide non-biased clustering measurements.
 
 In this tutorial, the input file contains the tissue cell coordinates
 and cell markers information. We will evaluate the presence of cell
-clustering behavior, the presence of aggregation and segregation effects
+clustering behaviour, the presence of aggregation and segregation effects
 between cell populations, and the differences in spatial cell
 distributions.
 
@@ -31,7 +31,7 @@ distributed cells*
 
 **Downloadable files**:
 
-The input files and functions to run the following analyzes can be
+The input files and functions to run the following analyses can be
 downloaded from the SpaceR GitHub page:
 
 -   *Supplementary_data.xlsx*: input data used in this tutorial
@@ -43,14 +43,14 @@ downloaded from the SpaceR GitHub page:
     spatial dependence
 -   *function_distribution_equality_test.R*: function which performs
     distribution equality test
--   *run_functions.R*: R script which show how to run the functions
+-   *run_functions.R*: R script which shows how to run the functions
 
 **Input data**:
 
 -   *X-axis and Y-axis cell coordinates*
 -   *Marker positivities that identify cell populations*
 
-**Functions to import into R enviroment**:
+**Functions to import into R environment**:
 
 -   *spatial_randomness_test*: function which performs the spatial
     randomness test
@@ -76,7 +76,7 @@ The list of packages we are going to use for this analysis:
 ## Spatial randomness test
 
 The spatial randomness test evaluates the presence of cell clustering
-behavior. In this example we study the possible cluster behavior of the
+behaviour. In this example, we study the possible cluster behavior of the
 ACE2 cell population.
 
 Data loading:
@@ -117,14 +117,14 @@ head(Data)
     ## 6                   13.8          0.839799
 
 This dataset contains cytometric information such as cell area and
-perimeter. To run the spatial analysis we only need cell coordinates and
-marker classifications.
+perimeter. We only need cell coordinates and
+marker classifications to run the spatial analysis.
 
 The *XMin* and *XMax* variables contain the X-axis coordinates of cell
 perimeters. If we provide both variables as X-axis input, the function
 for testing the spatial randomness automatically calculates the average
 of X-axis coordinates. This average approximately corresponds to the
-X-axis cell centroid. Same type of input is considered for the Y-axis
+X-axis cell centroid. The same type of input is considered for the Y-axis
 coordinates.
 
 The *ACE2.Positive.classification* variable contains the cell marker
@@ -163,9 +163,9 @@ res = spatial_randomness_test(data=Data,
 
 ![](figure-markdown_github/SpatialRandomness-1.png)
 
-Following are the function arguments:
+Following there are the function arguments:
 
--   data: dataframe containing the cell spatial coordinates and marker
+-   data: data frame containing the cell spatial coordinates and marker
     positivities (1 = positive, 0 = negative). Negative cells must be
     included in the dataset
 -   X: vector containing the names of variables that indicate the
@@ -196,9 +196,9 @@ where,
 
 -   marker: cell population under exam
 -   n: number of cells which compose the cell population
--   average_NN: average nearest neighbor distance inside the cell
+-   average_NN: average nearest neighbour distance inside the cell
     population
--   rand_average_NN: average nearest neighbor distance inside the random
+-   rand_average_NN: average nearest neighbour distance inside the random
     populations of size *n*
 -   R: empirical *R* index. *R* \< 1 indicates aggregation (i.e.,
     clustering), *R* \> 1 indicates segregation, *R* ≈ 1 indicates
@@ -248,9 +248,9 @@ res =  spatial_dependence_test(data=Data,
 
 ![](figure-markdown_github/segregation-1.png)
 
-In the *marker* vector given as fuction input, AID is the baseline
-population from which the nearest neighbor distances are calculated. In
-this example, for each AID cell we search the nearest CD3 cell and
+In the *marker* vector given as function input, AID is the baseline
+population from which the nearest neighbour distances are calculated. In
+this example, for each AID cell, we search the nearest CD3 cell and
 calculate the distance.
 
 ``` r
@@ -279,8 +279,8 @@ aggregation between two cell populations. In this example, we evaluate
 if AID and GH2AX cells are significantly close to each other.
 
 We have observed double positive cells. A possible analysis strategy is
-to consider them as an additional population. In this way we can assess
-how double positive cells distribute and interact with the other cell
+to consider them as an additional population. In this way, we can assess
+how double-positive cells distribute and interact with the other cell
 populations.
 
 ``` r
@@ -329,12 +329,12 @@ res
     ## 1 GH2X_only 163      72.14           91.61 0.787 <2e-04
     ## 2    double 102     100.03          112.63 0.888 0.0936
 
-As we shown in the previous example, AID is the baseline population from
-which the nearest neighbor distances are calculated (AID was given as
+As we showed in the previous example, AID is the baseline population from
+which the nearest neighbour distances are calculated (AID was given as
 the first element of the *marker* vector). Therefore, each row of the
-output matrix describes the relation between AID cells and an other cell
+output matrix describes the relation between AID cells and another cell
 population. The results suggest the presence of aggregation behavior
-between AID and GH2X cells, while the double positive cells don’t
+between AID and GH2X cells, while the double-positive cells don’t
 significantly aggregate with AID cells.
 
 ## Distribution equality test
